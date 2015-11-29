@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ReactTypeahead = require('./lib/js/react-typeahead');
 var Handlebars = require('handlebars');
 
@@ -31,7 +32,7 @@ var bloodhoundConfig = {
 	local: states
 };
 
-React.render(
+ReactDOM.render(
     <ReactTypeahead bloodhound={bloodhoundConfig}
                     placeHolder="States - A basic example"/>,
     document.getElementById('#typeaheadDiv')
@@ -81,7 +82,7 @@ var customEvents = {
 
 var typeaheadConfig = {highlight:false};
 
-React.render(
+ReactDOM.render(
     <ReactTypeahead bloodhound={bloodhoundRemoteConfig}
                     datasource={dsRemote}
                     customEvents = {customEvents}
@@ -115,7 +116,7 @@ var remoteDS = {
   display: 'value'
 };
 
-React.render(
+ReactDOM.render(
     <ReactTypeahead bloodhound={bloodhoundRPCConfig}
                     datasource={remoteDS}
                     placeHolder="vanilla remote service typeahead" />,
